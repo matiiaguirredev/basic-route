@@ -10,6 +10,8 @@ class HomeController extends Controller{
 
         $contactoModel = new Contactos();
 
+        return $contactoModel->where("id", ">" , "2")->get();
+
         return $this->view("home", [
             "title" => "Home",
             "message" => "Hello World",
