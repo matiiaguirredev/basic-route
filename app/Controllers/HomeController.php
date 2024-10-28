@@ -2,11 +2,19 @@
 
 namespace App\Controllers;
 
-class HomeController {
-    
+use App\Models\Contactos;
+
+class HomeController extends Controller{
+
     public function index() {
 
-        return "Hola desde HomeController";
+        $contactoModel = new Contactos();
 
+        return $this->view("home", [
+            "title" => "Home",
+            "message" => "Hello World",
+        ]);
+        
     }
+
 }
