@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 class Controller {
+    
     public function view($route, $data = []) {
 
         extract($data);
@@ -20,5 +21,10 @@ class Controller {
         } else {
             echo "El archivo NO existe";
         }
+    }
+
+    public function redirect($route) {
+        header("Location: $route");
+        exit;
     }
 }
