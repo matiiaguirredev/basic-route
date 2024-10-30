@@ -10,10 +10,10 @@ class Controller {
 
         $route = str_replace(".", "/", $route);
 
-        if (file_exists("../public/resources/views/{$route}.php")) {
+        if (file_exists("../resources/views/{$route}.php")) {
 
             ob_start();
-            include("../public/resources/views/{$route}.php");
+            include("../resources/views/{$route}.php");
             $content = ob_get_clean();
             
             return $content;
